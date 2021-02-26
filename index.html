@@ -1,1 +1,1482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>School National Achievement Survey 2021
+      Tracker - Block Piprali</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<!-- Your platform (jquery) scripts. -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<link href="https://unpkg.com/survey-jquery@1.8.18/modern.css" type="text/css" rel="stylesheet" />
+<script src="https://unpkg.com/survey-jquery@1.8.18/survey.jquery.min.js"></script>
+<style>
+table.sv_q_matrix_dynamic {
+  display: block;
+  width: calc(100% - 150px) !important;
+  overflow-x: scroll;
+  margin-left: 150px;
+}
+table.sv_q_matrix_dynamic tr>th:first-child {
+  position: absolute;
+  width: 150px;
+  margin-left: -150px;
+  margin-top: 11px;
+  border-bottom: 1px solid rgb(231, 231, 231);
+}
+.sv-header__text{
+text-align:center;
+width:100%;
+}
+</style>
+</head>
+<body style="background-color:whitesmoke; padding-left:0rem;padding-right:0rem;">
+<div id="surveyContainer" style="background-color:white;"></div>
+</body>
+<script>
+Survey.StylesManager.applyTheme("modern");
+
+var surveyJSON = {
+  "title": "National Achievement Survey 2021 Tracker",
+  "description": "(Block Piprali)",
+  "logo": "https://i.pinimg.com/originals/33/63/ed/3363ed08a390ecec6e6f3ec775a2fd2a.jpg",
+  "logoWidth": 150,
+  "logoHeight": 100,
+  "logoPosition": "top",
+  "completedHtml": "<html>\n<h3>Thank you! Your data has been saved successfully!</h3>\n<a href=\"./\" class=\"sv-btn\" style=\"color:green;\" >Go back</a>\n</html>",
+  "pages": [
+    {
+      "name": "page1",
+      "elements": [
+        {
+          "type": "dropdown",
+          "name": "peeoName",
+          "title": "PEEO",
+          "isRequired": true,
+          "choices": [
+            "ABHAYPURA",
+            "BAJOR",
+            "BED KI DHANI",
+            "BERI",
+            "BHADWASI",
+            "CHANDPURA",
+            "CHAINPURA",
+            "DADIYA",
+            "DHANI BHADALAN",
+            "DHARMSHALA",
+            "DAULATPURA",
+            "GOKULPURA",
+            "GUNGARA",
+            "HARSH",
+            "JURATHDA",
+            "KATRATHAL",
+            "KISHANPURA",
+            "KOLIDA",
+            "KUDLI",
+            "KUSHALPURA",
+            "LADHANA",
+            "MALKEDA",
+            "NANI",
+            "NP_SIKAR(BAJAJ)",
+            "NP_SIKAR(SK)",
+            "PALASARA",
+            "PALSANA",
+            "PIPRALI",
+            "PUROHIT KA BAS",
+            "RADHAKISHANPURA",
+            "RAGHUNATHGARH",
+            "RAJPURA",
+            "RANOLI",
+            "REWASA",
+            "SANGARWA",
+            "SHEESHYO",
+            "SHIVSINGHPURA",
+            "SHYAMGARH",
+            "SHYAMPURA",
+            "SINGHASAN",
+            "SUJAWAS",
+            "TARPURA"
+          ],
+          "choicesOrder": "asc"
+        },
+//         {
+//           "type": "dropdown",
+//           "name": "schoolName",
+//           "title": "School",
+//           "isRequired": true,
+//           "choices": [
+        {
+            "value": "GOVT. SR.SEC.SCH., ABHAYPURA",
+            "visibleif": "{peeoName} = 'ABHAYPURA'"
+        },
+        {
+            "value": "GOVT. PRIMARY SCHOOL CHAK KUMLIWALA",
+            "visibleif": "{peeoName} = 'ABHAYPURA'"
+        },
+        {
+            "value": "GOVT. SR.SEC.SCH., NANGAL ABHYAPURA",
+            "visibleif": "{peeoName} = 'ABHAYPURA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., BHAGATPURA",
+            "visibleif": "{peeoName} = 'ABHAYPURA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., CHIRAVALI JOHRI",
+            "visibleif": "{peeoName} = 'ABHAYPURA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., PRATVIPURA",
+            "visibleif": "{peeoName} = 'ABHAYPURA'"
+        },
+        {
+            "value": "GOVT.P.SCH., DACHIN DHANI NANGAL",
+            "visibleif": "{peeoName} = 'ABHAYPURA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., JOSHIYAN KI DHANI",
+            "visibleif": "{peeoName} = 'ABHAYPURA'"
+        },
+        {
+            "value": "GOVT.SR.SEC.SCH. BAJOR",
+            "visibleif": "{peeoName} = 'BAJOR'"
+        },
+        {
+            "value": "GOVT.P.SCH., FOOTI JOHDI BAJOR",
+            "visibleif": "{peeoName} = 'BAJOR'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., DHAKA KI DHANI",
+            "visibleif": "{peeoName} = 'BAJOR'"
+        },
+        {
+            "value": "GOVT.P.SCH., CHATURBHUJ JOHARI",
+            "visibleif": "{peeoName} = 'BAJOR'"
+        },
+        {
+            "value": "GOVT.P.SCH., JHUNJHARA KA MATH",
+            "visibleif": "{peeoName} = 'BAJOR'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., MALIYON KI DHANI",
+            "visibleif": "{peeoName} = 'BAJOR'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., NEEM KI DHANI BAJOR",
+            "visibleif": "{peeoName} = 'BAJOR'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., KAHARO KI DHANI",
+            "visibleif": "{peeoName} = 'BAJOR'"
+        },
+        {
+            "value": "GOVT. SR. SEC.SCH., BAIDH KI DHANI",
+            "visibleif": "{peeoName} = 'BED KI DHANI'"
+        },
+        {
+            "value": "GOVT.P.SCH., DERIWALI DHANI",
+            "visibleif": "{peeoName} = 'BED KI DHANI'"
+        },
+        {
+            "value": "GOVT. SR. SEC.SCH., BERI",
+            "visibleif": "{peeoName} = 'BERI'"
+        },
+        {
+            "value": "GOVT.SR. SEC. SCH., BHOJYANA JOHARA",
+            "visibleif": "{peeoName} = 'BERI'"
+        },
+        {
+            "value": "GOVT.P.SCH., DIGYARADI JOHARI BERI",
+            "visibleif": "{peeoName} = 'BERI'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., BALU CHEJARA KI DHANI",
+            "visibleif": "{peeoName} = 'BERI'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., DINGLI JOHDI BERI",
+            "visibleif": "{peeoName} = 'BERI'"
+        },
+        {
+            "value": "GOVT.P.SCH., KHAKHI JI KE MANDIR KE PASS, BERI",
+            "visibleif": "{peeoName} = 'BERI'"
+        },
+        {
+            "value": "GOVT.P.SCH., MAHANO KI JOHDI BERI",
+            "visibleif": "{peeoName} = 'BERI'"
+        },
+        {
+            "value": "GOVT.P.SCH., UJEEN SINGH KA NADA, BERI",
+            "visibleif": "{peeoName} = 'BERI'"
+        },
+        {
+            "value": "GOVT.P.SCH., MAHALANA JOHARA",
+            "visibleif": "{peeoName} = 'BERI'"
+        },
+        {
+            "value": "GOVT. K.G.B.V. SIKAR",
+            "visibleif": "{peeoName} = 'BHADWASI'"
+        },
+        {
+            "value": "GOVT.P.SCH., PURVANI JOHDI",
+            "visibleif": "{peeoName} = 'BHADWASI'"
+        },
+        {
+            "value": "GOVT.P.SCH., DHANGDA JOHADA",
+            "visibleif": "{peeoName} = 'BHADWASI'"
+        },
+        {
+            "value": "GOVT. SR. SEC.SCH., BHADWASI",
+            "visibleif": "{peeoName} = 'BHADWASI'"
+        },
+        {
+            "value": "GOVT.SEC.SCH., JAGMALPURA",
+            "visibleif": "{peeoName} = 'BHADWASI'"
+        },
+        {
+            "value": "GOVT. SR.SEC.SCH. CHAINPURA",
+            "visibleif": "{peeoName} = 'CHAINPURA'"
+        },
+        {
+            "value": "GOVT.SR.SEC.SCH., CHARAN KA BAS",
+            "visibleif": "{peeoName} = 'CHAINPURA'"
+        },
+        {
+            "value": "GOVT.SEC.SCH., PIPLI NAGAR",
+            "visibleif": "{peeoName} = 'CHAINPURA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., DHOLA KI DHANI",
+            "visibleif": "{peeoName} = 'CHAINPURA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., DADLI",
+            "visibleif": "{peeoName} = 'CHAINPURA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., GUJARIYA JOHADA",
+            "visibleif": "{peeoName} = 'CHAINPURA'"
+        },
+        {
+            "value": "GOVT.SEC.SCH., DEVLA NADA",
+            "visibleif": "{peeoName} = 'CHAINPURA'"
+        },
+        {
+            "value": "GOVT.P.SCH., NADIYA KADARKHAN",
+            "visibleif": "{peeoName} = 'CHAINPURA'"
+        },
+        {
+            "value": "GOVT. SR.SEC.SCH., CHANDPURA",
+            "visibleif": "{peeoName} = 'CHANDPURA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., SHALAMSINGH KI DHANI",
+            "visibleif": "{peeoName} = 'CHANDPURA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., MIRWALI TALAI",
+            "visibleif": "{peeoName} = 'CHANDPURA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., JODAKYA JOHARI",
+            "visibleif": "{peeoName} = 'CHANDPURA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., BAJAJ GRAM SANWALI",
+            "visibleif": "{peeoName} = 'CHANDPURA'"
+        },
+        {
+            "value": "GOVT. G.SR.SEC.SCH. DADIYA",
+            "visibleif": "{peeoName} = 'DADIYA'"
+        },
+        {
+            "value": "GOVT.SEC.SCH., DEENARPURA",
+            "visibleif": "{peeoName} = 'DADIYA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., NEW BASTI DADIYA",
+            "visibleif": "{peeoName} = 'DADIYA'"
+        },
+        {
+            "value": "GOVT.P.SCH., LALANA JOHRA",
+            "visibleif": "{peeoName} = 'DADIYA'"
+        },
+        {
+            "value": "GOVT.P.SCH.,TAJANA DEENARPURA",
+            "visibleif": "{peeoName} = 'DADIYA'"
+        },
+        {
+            "value": "GOVT. GIRLS SR.SEC.SCH. DAULATPURA",
+            "visibleif": "{peeoName} = 'DAULATPURA'"
+        },
+        {
+            "value": "GOVT. SR.SEC.SCH., LAXMAN KA BAS",
+            "visibleif": "{peeoName} = 'DAULATPURA'"
+        },
+        {
+            "value": "GOVT.P.SCH., GIDH. JOHARA",
+            "visibleif": "{peeoName} = 'DAULATPURA'"
+        },
+        {
+            "value": "GOVT.P.SCH., MALIYON KI DHANI",
+            "visibleif": "{peeoName} = 'DAULATPURA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., DOLATPURA",
+            "visibleif": "{peeoName} = 'DAULATPURA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., GUMANA KA BAS",
+            "visibleif": "{peeoName} = 'DAULATPURA'"
+        },
+        {
+            "value": "GOVT.P.SCH., KUMBHA KI DHANI",
+            "visibleif": "{peeoName} = 'DAULATPURA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., SANS. SUNDARPURA",
+            "visibleif": "{peeoName} = 'DHANI BHADALAN'"
+        },
+        {
+            "value": "GOVT. SR. SEC.SCHOOL. DHANI BHADALAN",
+            "visibleif": "{peeoName} = 'DHANI BHADALAN'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., CHETANDAS KI DHANI",
+            "visibleif": "{peeoName} = 'DHANI BHADALAN'"
+        },
+        {
+            "value": "GOVT.P.SCH., BIJARNIYA KI DHANI",
+            "visibleif": "{peeoName} = 'DHANI BHADALAN'"
+        },
+        {
+            "value": "GOVT. P. SCH. DOLIWALI DHANI",
+            "visibleif": "{peeoName} = 'DHANI BHADALAN'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., TIBA KANWAR",
+            "visibleif": "{peeoName} = 'DHANI BHADALAN'"
+        },
+        {
+            "value": "GOVT.P.SCH., DURJANWALA JOHARA",
+            "visibleif": "{peeoName} = 'DHANI BHADALAN'"
+        },
+        {
+            "value": "GOVT.P.SCH., BADHALA JOHARA",
+            "visibleif": "{peeoName} = 'DHANI BHADALAN'"
+        },
+        {
+            "value": "GOVT. P. SCH. NATHUWALI JOHARI",
+            "visibleif": "{peeoName} = 'DHANI BHADALAN'"
+        },
+        {
+            "value": "SETH. J.P.GOYANKA GOVT. SR.SEC.SCHOOL.,DHARAMSHALA",
+            "visibleif": "{peeoName} = 'DHARMSHALA'"
+        },
+        {
+            "value": "GOVT.SEC.SCH., CHAINRAM KA BAS BERI",
+            "visibleif": "{peeoName} = 'DHARMSHALA'"
+        },
+        {
+            "value": "GOVT.P.SCH., MEENO KI DHANI",
+            "visibleif": "{peeoName} = 'DHARMSHALA'"
+        },
+        {
+            "value": "GOVT.SEC.SCH., GHADELIYO KI DHANI",
+            "visibleif": "{peeoName} = 'DHARMSHALA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., SHRI BALAJI KA NADA",
+            "visibleif": "{peeoName} = 'DHARMSHALA'"
+        },
+        {
+            "value": "M.G.E.M.SR.SEC.SCH. GOKULPURA",
+            "visibleif": "{peeoName} = 'GOKULPURA'"
+        },
+        {
+            "value": "GOVT.SR.SEC.SCH. GOKULPURA",
+            "visibleif": "{peeoName} = 'GOKULPURA'"
+        },
+        {
+            "value": "GOVT.SEC.SCH., DASA KI DHANI",
+            "visibleif": "{peeoName} = 'GOKULPURA'"
+        },
+        {
+            "value": "GOVT. SANSKRIT P.S. GOKULPURA",
+            "visibleif": "{peeoName} = 'GOKULPURA'"
+        },
+        {
+            "value": "GOVT.P.SCH., KUPDA JOHARA",
+            "visibleif": "{peeoName} = 'GOKULPURA'"
+        },
+        {
+            "value": "GOVT.U.SCH., RAMU KA BAS",
+            "visibleif": "{peeoName} = 'GOKULPURA'"
+        },
+        {
+            "value": "GOVT.P.SCH., RAIBARIYON KI DHANI",
+            "visibleif": "{peeoName} = 'GOKULPURA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., DEVLI JOHDI",
+            "visibleif": "{peeoName} = 'GOKULPURA'"
+        },
+        {
+            "value": "GOVT.P.SCH., KHICHARO KA BAS",
+            "visibleif": "{peeoName} = 'GOKULPURA'"
+        },
+        {
+            "value": "GOVT. SR.SEC.SCH. GUNGARA",
+            "visibleif": "{peeoName} = 'GUNGARA'"
+        },
+        {
+            "value": "GOVT.SEC.SCH., SWAMI KI DHANI .",
+            "visibleif": "{peeoName} = 'GUNGARA'"
+        },
+        {
+            "value": "GOVT.SANSKRIT, P. SCH. KHUTIYALI JOHARI",
+            "visibleif": "{peeoName} = 'GUNGARA'"
+        },
+        {
+            "value": "GOVT.P.SCH., DHAKAWALI JOHARI",
+            "visibleif": "{peeoName} = 'GUNGARA'"
+        },
+        {
+            "value": "GOVT. P. SCH. DHARA SHYAM SINGH, GUNGARA",
+            "visibleif": "{peeoName} = 'GUNGARA'"
+        },
+        {
+            "value": "GOVT. P. SCH., KESHRAWALI JOHARI",
+            "visibleif": "{peeoName} = 'GUNGARA'"
+        },
+        {
+            "value": "GOVT.P.SCH., NADA JOHARA",
+            "visibleif": "{peeoName} = 'GUNGARA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., PILIYON KA DHAHAR",
+            "visibleif": "{peeoName} = 'GUNGARA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., KHEJARWALA",
+            "visibleif": "{peeoName} = 'GUNGARA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., SUNDARLI JOHARI",
+            "visibleif": "{peeoName} = 'GUNGARA'"
+        },
+        {
+            "value": "GOVT. SR.SEC.SCH., HARSH",
+            "visibleif": "{peeoName} = 'HARSH'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., MALIYO KI DHANI",
+            "visibleif": "{peeoName} = 'HARSH'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., BHOYA",
+            "visibleif": "{peeoName} = 'HARSH'"
+        },
+        {
+            "value": "GOVT.P.SCH., PALASIYA",
+            "visibleif": "{peeoName} = 'HARSH'"
+        },
+        {
+            "value": "GOVT. SR.SEC.SCH., JURATHARA",
+            "visibleif": "{peeoName} = 'JURATHDA'"
+        },
+        {
+            "value": "GOVT.SEC.SCH. BARAL",
+            "visibleif": "{peeoName} = 'JURATHDA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., PIPLA KI DHANI",
+            "visibleif": "{peeoName} = 'JURATHDA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., DULEHPURA",
+            "visibleif": "{peeoName} = 'JURATHDA'"
+        },
+        {
+            "value": "GOVT.P.SCH., EIT WALI JOHDI BARAL",
+            "visibleif": "{peeoName} = 'JURATHDA'"
+        },
+        {
+            "value": "GOVT.P.SCH., TIWARI KI DHANI BARAL",
+            "visibleif": "{peeoName} = 'JURATHDA'"
+        },
+        {
+            "value": "GOVT.SR.SEC.SCH. KATRATHAL",
+            "visibleif": "{peeoName} = 'KATRATHAL'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., NADIYA KUMHARAN",
+            "visibleif": "{peeoName} = 'KATRATHAL'"
+        },
+        {
+            "value": "GOVT.P.SCH., LOHARI JOHADI",
+            "visibleif": "{peeoName} = 'KATRATHAL'"
+        },
+        {
+            "value": "GOVT.P.SCH., NADIYA KISHANA",
+            "visibleif": "{peeoName} = 'KATRATHAL'"
+        },
+        {
+            "value": "GOVT.P.SCH., BHAMU KI DHHANI",
+            "visibleif": "{peeoName} = 'KATRATHAL'"
+        },
+        {
+            "value": "GOVT.P.SCH., SAMDARI JOHADI",
+            "visibleif": "{peeoName} = 'KATRATHAL'"
+        },
+        {
+            "value": "GOVT. P. SCH., WARD NO. RAILWAY STATION KE PASS KATRATHAL",
+            "visibleif": "{peeoName} = 'KATRATHAL'"
+        },
+        {
+            "value": "GOVT.P.SCH., DHANAWALI",
+            "visibleif": "{peeoName} = 'KATRATHAL'"
+        },
+        {
+            "value": "GOVT.P.SCH., KHATIWALA JOHARA",
+            "visibleif": "{peeoName} = 'KATRATHAL'"
+        },
+        {
+            "value": "GOVT.P.SCH., ALAYALI JOHARI",
+            "visibleif": "{peeoName} = 'KATRATHAL'"
+        },
+        {
+            "value": "GOVT.P.SCH., BAKYAWALI",
+            "visibleif": "{peeoName} = 'KATRATHAL'"
+        },
+        {
+            "value": "GOVT.P.SCH., BAGRIYA KI DHANI",
+            "visibleif": "{peeoName} = 'KATRATHAL'"
+        },
+        {
+            "value": "GOVT.P.SCH., NAGARLI JOHARI",
+            "visibleif": "{peeoName} = 'KATRATHAL'"
+        },
+        {
+            "value": "GOVT.P.SCH., BANI HARIJAN BASTI",
+            "visibleif": "{peeoName} = 'KATRATHAL'"
+        },
+        {
+            "value": "GOVT.SR.SEC.SCH. KISHANPURA",
+            "visibleif": "{peeoName} = 'KISHANPURA'"
+        },
+        {
+            "value": "GOVT.SEC.SCH., MIYA KI DHANI",
+            "visibleif": "{peeoName} = 'KISHANPURA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., PAPDIYO KI DHANI",
+            "visibleif": "{peeoName} = 'KISHANPURA'"
+        },
+        {
+            "value": "GOVT. P. SCH. KHANGA KA NADIYA",
+            "visibleif": "{peeoName} = 'KISHANPURA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., AKHAIPURA",
+            "visibleif": "{peeoName} = 'KISHANPURA'"
+        },
+        {
+            "value": "GOVT. GIRL.U. P. SCH. DUNGARI JOHARI AKHEPURA",
+            "visibleif": "{peeoName} = 'KISHANPURA'"
+        },
+        {
+            "value": "GOVT. P. SCH. KHICHRO KI JOHARI",
+            "visibleif": "{peeoName} = 'KISHANPURA'"
+        },
+        {
+            "value": "GOVT. SR.SEC.SCH., KOLIDA",
+            "visibleif": "{peeoName} = 'KOLIDA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., KOLIDA",
+            "visibleif": "{peeoName} = 'KOLIDA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., KHETANI JOHARI",
+            "visibleif": "{peeoName} = 'KOLIDA'"
+        },
+        {
+            "value": "GOVT.P.SCH., KHATIWALA JOHARA",
+            "visibleif": "{peeoName} = 'KOLIDA'"
+        },
+        {
+            "value": "GOVT.P.SCH., PIPANA JOHARA",
+            "visibleif": "{peeoName} = 'KOLIDA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., NATHA KI DHANI",
+            "visibleif": "{peeoName} = 'KOLIDA'"
+        },
+        {
+            "value": "GOVT.SR. SEC. SCH., KUDALI SIKAR-I",
+            "visibleif": "{peeoName} = 'KUDLI'"
+        },
+        {
+            "value": "GOVT. SR. SEC. SCH. HARDAYALPURA",
+            "visibleif": "{peeoName} = 'KUDLI'"
+        },
+        {
+            "value": "GOVT.P.SCH., NALA KA BALAJI",
+            "visibleif": "{peeoName} = 'KUDLI'"
+        },
+        {
+            "value": "GOVT.G.U.P.SCH., KUDALI",
+            "visibleif": "{peeoName} = 'KUDLI'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., FUTI JOHARI",
+            "visibleif": "{peeoName} = 'KUDLI'"
+        },
+        {
+            "value": "GOVT. SR. SEC.SCH., KUSHALPURA",
+            "visibleif": "{peeoName} = 'KUSHALPURA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., RANAWALI JOHARI",
+            "visibleif": "{peeoName} = 'KUSHALPURA'"
+        },
+        {
+            "value": "GOVT.P.SCH., NADA KI DHANI",
+            "visibleif": "{peeoName} = 'KUSHALPURA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., NIRVANO KI DHANI, Shivnagar",
+            "visibleif": "{peeoName} = 'KUSHALPURA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., ALAYALI JOHARI",
+            "visibleif": "{peeoName} = 'KUSHALPURA'"
+        },
+        {
+            "value": "GOVT.P.SCH., NYUTARNA JOHARA",
+            "visibleif": "{peeoName} = 'KUSHALPURA'"
+        },
+        {
+            "value": "GOVT. SR.SEC.SCH., LADHANA",
+            "visibleif": "{peeoName} = 'LADHANA'"
+        },
+        {
+            "value": "GOVT. SR. SEC.SCH., RAYPURA",
+            "visibleif": "{peeoName} = 'LADHANA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., KHOKHARO KI DHANI",
+            "visibleif": "{peeoName} = 'LADHANA'"
+        },
+        {
+            "value": "GOVT.P.SCH., BADA JOHARA RAIPURA",
+            "visibleif": "{peeoName} = 'LADHANA'"
+        },
+        {
+            "value": "GOVT.P. SANSKRIT SCHOOL KUWALA JOHRA GRAM KUWALSAR",
+            "visibleif": "{peeoName} = 'LADHANA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., BARSINGHPURA",
+            "visibleif": "{peeoName} = 'LADHANA'"
+        },
+        {
+            "value": "GOVT. SR.SEC.SCH., MALKEDA",
+            "visibleif": "{peeoName} = 'MALKEDA'"
+        },
+        {
+            "value": "GOVT.SEC.SCH., DEVGARH",
+            "visibleif": "{peeoName} = 'MALKEDA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., PIPLYA JOHARA",
+            "visibleif": "{peeoName} = 'MALKEDA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., MALIYON KI DHANI",
+            "visibleif": "{peeoName} = 'MALKEDA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH.,RAWJI KI DHANI",
+            "visibleif": "{peeoName} = 'MALKEDA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., HIRAMALJI",
+            "visibleif": "{peeoName} = 'MALKEDA'"
+        },
+        {
+            "value": "GOVT.P.SCH., CHOUHANO KI DHANI",
+            "visibleif": "{peeoName} = 'MALKEDA'"
+        },
+        {
+            "value": "GOVT. SR. SEC. SCH., NANI SIKAR",
+            "visibleif": "{peeoName} = 'NANI'"
+        },
+        {
+            "value": "GOVT.P.SCH., ATHUNA JOHARA",
+            "visibleif": "{peeoName} = 'NANI'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., NATHAWAT PURA",
+            "visibleif": "{peeoName} = 'NANI'"
+        },
+        {
+            "value": "GOVT.P.SCH., UTRADA NARA",
+            "visibleif": "{peeoName} = 'NANI'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., GOPINATHJI KI DHANI",
+            "visibleif": "{peeoName} = 'NANI'"
+        },
+        {
+            "value": "GOVT. PANNALAL CHITLANGIA SR.SEC.SCH. SIKAR",
+            "visibleif": "{peeoName} = 'NP_SIKAR(BAJAJ)'"
+        },
+        {
+            "value": "GOVT. M.G.HINDI VIDYA BHAWAN SR. SEC. SCHOOL, SIKAR",
+            "visibleif": "{peeoName} = 'NP_SIKAR(BAJAJ)'"
+        },
+        {
+            "value": "GOVT.GIRLS SR.SEC.SCH., BAJAJ ROAD SIKAR",
+            "visibleif": "{peeoName} = 'NP_SIKAR(BAJAJ)'"
+        },
+        {
+            "value": "GOVT.SEC.SCH., BANDIABAS",
+            "visibleif": "{peeoName} = 'NP_SIKAR(BAJAJ)'"
+        },
+        {
+            "value": "GOVT.P.SCH., VYAPARIYAN SIKAR",
+            "visibleif": "{peeoName} = 'NP_SIKAR(BAJAJ)'"
+        },
+        {
+            "value": "GOVT.P.SCH., CHHOTIWALI KOTHI",
+            "visibleif": "{peeoName} = 'NP_SIKAR(BAJAJ)'"
+        },
+        {
+            "value": "GOVT.P.SCH., KARIGARAN SIKAR",
+            "visibleif": "{peeoName} = 'NP_SIKAR(BAJAJ)'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., MOCHIWARA",
+            "visibleif": "{peeoName} = 'NP_SIKAR(BAJAJ)'"
+        },
+        {
+            "value": "GOVT.GIRLS U.P.SCH., W.N. SIKAR",
+            "visibleif": "{peeoName} = 'NP_SIKAR(BAJAJ)'"
+        },
+        {
+            "value": "GOVT.GIRLS P.S.,SASTRINAGAR SIKAR",
+            "visibleif": "{peeoName} = 'NP_SIKAR(BAJAJ)'"
+        },
+        {
+            "value": "SHREE HINDI VIDYA BHAWAN GOVT. GIRLS UPPER PRIMARY SCHOOL BAJAJ ROAD",
+            "visibleif": "{peeoName} = 'NP_SIKAR(BAJAJ)'"
+        },
+        {
+            "value": "GOVT.P.SCH., PUROHITAN SIKAR",
+            "visibleif": "{peeoName} = 'NP_SIKAR(BAJAJ)'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., VIKARAM SIKAR",
+            "visibleif": "{peeoName} = 'NP_SIKAR(BAJAJ)'"
+        },
+        {
+            "value": "RADHA KRISHNA MAROO GOVT.GIRLS SR.SEC SCHOOL, SIKAR",
+            "visibleif": "{peeoName} = 'NP_SIKAR(SK)'"
+        },
+        {
+            "value": "GOVT.P.SCH., FATEHPUR ROAD SIKAR",
+            "visibleif": "{peeoName} = 'NP_SIKAR(SK)'"
+        },
+        {
+            "value": "GOVT. VA.UP. SAN. SCH., SIKAR",
+            "visibleif": "{peeoName} = 'NP_SIKAR(SK)'"
+        },
+        {
+            "value": "GOVT. S.K. SR.SEC.SCH. SIKAR",
+            "visibleif": "{peeoName} = 'NP_SIKAR(SK)'"
+        },
+        {
+            "value": "GOVT.SANS.U.P.SCH., SIKAR",
+            "visibleif": "{peeoName} = 'NP_SIKAR(SK)'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., ANAND NAGAR",
+            "visibleif": "{peeoName} = 'NP_SIKAR(SK)'"
+        },
+        {
+            "value": "GOVT. HARDAYAL SEC.SCH., DEVIPURA",
+            "visibleif": "{peeoName} = 'NP_SIKAR(SK)'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., NAYKAN SIKAR",
+            "visibleif": "{peeoName} = 'NP_SIKAR(SK)'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., MHADAW SIKAR",
+            "visibleif": "{peeoName} = 'NP_SIKAR(SK)'"
+        },
+        {
+            "value": "GOVT.P.SCH., NAVODI KOTHI SIKAR",
+            "visibleif": "{peeoName} = 'NP_SIKAR(SK)'"
+        },
+        {
+            "value": "GOVT.P.SCH., WARD N. SIKAR",
+            "visibleif": "{peeoName} = 'NP_SIKAR(SK)'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., AMBEDKARNAGAR",
+            "visibleif": "{peeoName} = 'NP_SIKAR(SK)'"
+        },
+        {
+            "value": "GOVT.P.SCH. BALMIKI MOHALLA SIKAR",
+            "visibleif": "{peeoName} = 'NP_SIKAR(SK)'"
+        },
+        {
+            "value": "GOVT. SR.SEC.SCH., PALASARA",
+            "visibleif": "{peeoName} = 'PALASARA'"
+        },
+        {
+            "value": "GOVT.SEC.SCH., TODI MADHOPURA BAGRIYO KI DHANI SIKAR",
+            "visibleif": "{peeoName} = 'PALASARA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., KALA KHET",
+            "visibleif": "{peeoName} = 'PALASARA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., BUTOLI",
+            "visibleif": "{peeoName} = 'PALASARA'"
+        },
+        {
+            "value": "GOVT.P.SCH., BHURIYON KI DHANI",
+            "visibleif": "{peeoName} = 'PALASARA'"
+        },
+        {
+            "value": "GOVT. P. SCH., DHANI CHOSALA KI",
+            "visibleif": "{peeoName} = 'PALASARA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., HARIPURA",
+            "visibleif": "{peeoName} = 'PALASARA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., TODI",
+            "visibleif": "{peeoName} = 'PALASARA'"
+        },
+        {
+            "value": "GOVT.SEC.SCH., SHOBH",
+            "visibleif": "{peeoName} = 'PALASARA'"
+        },
+        {
+            "value": "GOVT.SEC.SCH., MADHOPURA",
+            "visibleif": "{peeoName} = 'PALASARA'"
+        },
+        {
+            "value": "GOVT.GIRLS. SEC.SCH., PALASANA",
+            "visibleif": "{peeoName} = 'PALSANA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., GANPATIA JOHDA",
+            "visibleif": "{peeoName} = 'PALSANA'"
+        },
+        {
+            "value": "SHAHEED. S.R. KUMAWAT AND K. L. TAMBI GOVT. SR. SEC. SCHOOL, PALSANA",
+            "visibleif": "{peeoName} = 'PALSANA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., SAN. BALAJI KI DHANI",
+            "visibleif": "{peeoName} = 'PALSANA'"
+        },
+        {
+            "value": "GOVT.P.SCH., HINDU WALA JOHDA",
+            "visibleif": "{peeoName} = 'PALSANA'"
+        },
+        {
+            "value": "GOVT.P.SCH., LAMBI JOHRI",
+            "visibleif": "{peeoName} = 'PALSANA'"
+        },
+        {
+            "value": "GOVT.P.SCH., HOD KA BALAJI PALSANA",
+            "visibleif": "{peeoName} = 'PALSANA'"
+        },
+        {
+            "value": "GOVT. P.SCH. KAIMARIA JOHARA",
+            "visibleif": "{peeoName} = 'PALSANA'"
+        },
+        {
+            "value": "GOVT. P. SCH. CHHIPI JOHDI",
+            "visibleif": "{peeoName} = 'PALSANA'"
+        },
+        {
+            "value": "GOVT. P. SCH. CHHILRA JOHRA",
+            "visibleif": "{peeoName} = 'PALSANA'"
+        },
+        {
+            "value": "GOVT. P. SCH. LAMBA JOHRA",
+            "visibleif": "{peeoName} = 'PALSANA'"
+        },
+        {
+            "value": "GOVT.SEC.SCH., RAJPUTO KI DHANI",
+            "visibleif": "{peeoName} = 'PIPRALI'"
+        },
+        {
+            "value": "GOVT.SR.SEC.SCH., NADI",
+            "visibleif": "{peeoName} = 'PIPRALI'"
+        },
+        {
+            "value": "SAHEED SARPHOODEEN GOVT.SR.SEC.SCH., PIPRALI,SIKAR",
+            "visibleif": "{peeoName} = 'PIPRALI'"
+        },
+        {
+            "value": "GOVT..G .SEC.SCH., PIPRALI",
+            "visibleif": "{peeoName} = 'PIPRALI'"
+        },
+        {
+            "value": "GOVT.P.SCH., MEENA BASTI PIPRAL",
+            "visibleif": "{peeoName} = 'PIPRALI'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., NAGARWALA JOHRA",
+            "visibleif": "{peeoName} = 'PIPRALI'"
+        },
+        {
+            "value": "GOVT. U.P. SCH., LOTHWALI JOHARI, DURGAPURA",
+            "visibleif": "{peeoName} = 'PIPRALI'"
+        },
+        {
+            "value": "GOVT.PRAVESIKA. SANS. SCH., PALASIYA-PIPRALISIKAR",
+            "visibleif": "{peeoName} = 'PIPRALI'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., SANS. MALUWALA",
+            "visibleif": "{peeoName} = 'PIPRALI'"
+        },
+        {
+            "value": "GOVT.P.SCH., BHAMUO KI DHANI",
+            "visibleif": "{peeoName} = 'PIPRALI'"
+        },
+        {
+            "value": "GOVT.P.SCH., BALANA JOHDA PIPRALI",
+            "visibleif": "{peeoName} = 'PIPRALI'"
+        },
+        {
+            "value": "GOVT. SR. SEC.SCH. PUROHIT KA BAS",
+            "visibleif": "{peeoName} = 'PUROHIT KA BAS'"
+        },
+        {
+            "value": "GOVT.U.P.SCH.,RATALI JOHDI",
+            "visibleif": "{peeoName} = 'PUROHIT KA BAS'"
+        },
+        {
+            "value": "GOVT.P.SCH., NAGORIYA BASTI",
+            "visibleif": "{peeoName} = 'PUROHIT KA BAS'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., BHAIRUJI STAIND",
+            "visibleif": "{peeoName} = 'PUROHIT KA BAS'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., BHARGARO KI DHANI",
+            "visibleif": "{peeoName} = 'PUROHIT KA BAS'"
+        },
+        {
+            "value": "GOVT.P.SCH., UNDANALA",
+            "visibleif": "{peeoName} = 'PUROHIT KA BAS'"
+        },
+        {
+            "value": "GOVT.P.SCH., DOIYON KI DHHANI",
+            "visibleif": "{peeoName} = 'PUROHIT KA BAS'"
+        },
+        {
+            "value": "GOVT.SEC.SCH., LAKHIPURA",
+            "visibleif": "{peeoName} = 'PUROHIT KA BAS'"
+        },
+        {
+            "value": "GOVT.SEC.SCH., UDAYDAS KI DHANI",
+            "visibleif": "{peeoName} = 'RADHA KISHANPURA'"
+        },
+        {
+            "value": "GOVT. SR. SEC.SCH., RADHAKRISHANPURA",
+            "visibleif": "{peeoName} = 'RADHA KISHANPURA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., UDAILAL KI DHANI",
+            "visibleif": "{peeoName} = 'RADHA KISHANPURA'"
+        },
+        {
+            "value": "GOVT. U.P.SCH., DHAMKALI JOHRI",
+            "visibleif": "{peeoName} = 'RADHA KISHANPURA'"
+        },
+        {
+            "value": "GOVT..U.P.SCH., DULA KI DHANI",
+            "visibleif": "{peeoName} = 'RADHA KISHANPURA'"
+        },
+        {
+            "value": "GOVT. SR.SEC.SCH., RAGHUNATHGARH",
+            "visibleif": "{peeoName} = 'RAGHUNATHGARH (PIP)'"
+        },
+        {
+            "value": "GOVT.SEC.SCH., DABPANORA",
+            "visibleif": "{peeoName} = 'RAGHUNATHGARH (PIP)'"
+        },
+        {
+            "value": "GOVT.G.U.P.SCH., RAGHUNATHGARH",
+            "visibleif": "{peeoName} = 'RAGHUNATHGARH (PIP)'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., GANESH MOD",
+            "visibleif": "{peeoName} = 'RAGHUNATHGARH (PIP)'"
+        },
+        {
+            "value": "GOVT.G.P.SCH., PANORA",
+            "visibleif": "{peeoName} = 'RAGHUNATHGARH (PIP)'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., KHORI BRAHMAN",
+            "visibleif": "{peeoName} = 'RAGHUNATHGARH (PIP)'"
+        },
+        {
+            "value": "GOVT.P.SCH., CHOTA JOHRAA",
+            "visibleif": "{peeoName} = 'RAGHUNATHGARH (PIP)'"
+        },
+        {
+            "value": "GOVT.SR.SEC.SCH., RAJPURA",
+            "visibleif": "{peeoName} = 'RAJPURA (PIP)'"
+        },
+        {
+            "value": "GOVT. SEC. SCH. GUDHA KHURD",
+            "visibleif": "{peeoName} = 'RAJPURA (PIP)'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., DHANI CHOUDHARY",
+            "visibleif": "{peeoName} = 'RAJPURA (PIP)'"
+        },
+        {
+            "value": "GOVT.U.P.SCH. HATYAJ",
+            "visibleif": "{peeoName} = 'RAJPURA (PIP)'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., GUDHA KALA",
+            "visibleif": "{peeoName} = 'RAJPURA (PIP)'"
+        },
+        {
+            "value": "GOVT. GIRLS SR. SEC.SCH., RANOLI",
+            "visibleif": "{peeoName} = 'RANOLI'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., BANIYO KI DHANI",
+            "visibleif": "{peeoName} = 'RANOLI'"
+        },
+        {
+            "value": "GOVT.P.SCH., MILO KI DHANI",
+            "visibleif": "{peeoName} = 'RANOLI'"
+        },
+        {
+            "value": "GOVT.P.SCH., SHOBHA KA WALI KOTI .",
+            "visibleif": "{peeoName} = 'RANOLI'"
+        },
+        {
+            "value": "GOVT. P. SCH. HARNATHJI KI DHANI RANOLI",
+            "visibleif": "{peeoName} = 'RANOLI'"
+        },
+        {
+            "value": "GOVT.P.SCH., LIPADI KI DHANI",
+            "visibleif": "{peeoName} = 'RANOLI'"
+        },
+        {
+            "value": "SMT.KRISHANA DEVI MOHAN LAL KABRA GOVT. SR.SEC.SCH., REWASA",
+            "visibleif": "{peeoName} = 'REWASA'"
+        },
+        {
+            "value": "GOVT.GIRLS U.P.SCH., RAIWASA",
+            "visibleif": "{peeoName} = 'REWASA'"
+        },
+        {
+            "value": "GOVT.P.SCH., TALAB KI DHANI",
+            "visibleif": "{peeoName} = 'REWASA'"
+        },
+        {
+            "value": "GOVT.P.SCH., PREMSINGH KI DHANI",
+            "visibleif": "{peeoName} = 'REWASA'"
+        },
+        {
+            "value": "GOVT.P.SCH., MAHANTO KI KOTHI",
+            "visibleif": "{peeoName} = 'REWASA'"
+        },
+        {
+            "value": "GOVT.SR.SEC.SCH., SANGARWA",
+            "visibleif": "{peeoName} = 'SANGARWA'"
+        },
+        {
+            "value": "GOVT. SR.SEC.SCH., AJABPURA",
+            "visibleif": "{peeoName} = 'SANGARWA'"
+        },
+        {
+            "value": "GOVT.P.SCH., MALAWALI DHANI",
+            "visibleif": "{peeoName} = 'SANGARWA'"
+        },
+        {
+            "value": "GOVT. SR.SEC.SCH. SHISHU RANOLI",
+            "visibleif": "{peeoName} = 'SHEESHYO'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., SHISHU",
+            "visibleif": "{peeoName} = 'SHEESHYO'"
+        },
+        {
+            "value": "GOVT.G.U.P.SCH., SHISHU",
+            "visibleif": "{peeoName} = 'SHEESHYO'"
+        },
+        {
+            "value": "GOVT.P.SCH., TAKHARI JOHARI SHISHU",
+            "visibleif": "{peeoName} = 'SHEESHYO'"
+        },
+        {
+            "value": "GOVT.P.SCH., JAJAM KI DHANII SHISHU",
+            "visibleif": "{peeoName} = 'SHEESHYO'"
+        },
+        {
+            "value": "GOVT. P. SCH. TILYAWALI",
+            "visibleif": "{peeoName} = 'SHEESHYO'"
+        },
+        {
+            "value": "GOVT. P. SCH. ADIMBA JOHARA",
+            "visibleif": "{peeoName} = 'SHEESHYO'"
+        },
+        {
+            "value": "GOVT.SR.SEC..SCH., SHIVSINGH PURA",
+            "visibleif": "{peeoName} = 'SHIVSINGHPURA'"
+        },
+        {
+            "value": "GOVT.SEC.SCH., SAMARTHPURA",
+            "visibleif": "{peeoName} = 'SHIVSINGHPURA'"
+        },
+        {
+            "value": "GOVT.P.SCH., GHORANA KI DHNI",
+            "visibleif": "{peeoName} = 'SHIVSINGHPURA'"
+        },
+        {
+            "value": "GOVT.P.SCH., SHIV SINGH PURA ,204",
+            "visibleif": "{peeoName} = 'SHIVSINGHPURA'"
+        },
+        {
+            "value": "GOVT. SR.SEC.SCH., SHYAMGARH",
+            "visibleif": "{peeoName} = 'SHYAMGARH'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., KANDA KI DHANI",
+            "visibleif": "{peeoName} = 'SHYAMGARH'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., DHOKAR",
+            "visibleif": "{peeoName} = 'SHYAMGARH'"
+        },
+        {
+            "value": "GOVT.P.SCH., SWAMI KI DHANI SHYAM",
+            "visibleif": "{peeoName} = 'SHYAMGARH'"
+        },
+        {
+            "value": "GOVT. VARISHTHA UPADHYAY SANSKRIT SCHOOL SHAKAMBHARI SAKARAI",
+            "visibleif": "{peeoName} = 'SHYAMGARH'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., BHAGOWA",
+            "visibleif": "{peeoName} = 'SHYAMGARH'"
+        },
+        {
+            "value": "GOVT.P.SCH., DHANI GOAR KI",
+            "visibleif": "{peeoName} = 'SHYAMGARH'"
+        },
+        {
+            "value": "GOVT.SR.SEC.SCH., SHYAMPURA",
+            "visibleif": "{peeoName} = 'SHYAMPURA (PIP)'"
+        },
+        {
+            "value": "GOVT.G.U.P.SCH., SHYAM PURA",
+            "visibleif": "{peeoName} = 'SHYAMPURA (PIP)'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., SHOBHANA JOHARA",
+            "visibleif": "{peeoName} = 'SHYAMPURA (PIP)'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., KIKRALIYA",
+            "visibleif": "{peeoName} = 'SHYAMPURA (PIP)'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., BHOJA KI DHANI",
+            "visibleif": "{peeoName} = 'SHYAMPURA (PIP)'"
+        },
+        {
+            "value": "GOVT. SR.SEC.SCH. SINGHASAN",
+            "visibleif": "{peeoName} = 'SINGHASAN'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., KHIJURALI JOHARI",
+            "visibleif": "{peeoName} = 'SINGHASAN'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., BHAGASARI JOHARI",
+            "visibleif": "{peeoName} = 'SINGHASAN'"
+        },
+        {
+            "value": "GOVT.G.U.P.SCH., SINGHASAN",
+            "visibleif": "{peeoName} = 'SINGHASAN'"
+        },
+        {
+            "value": "GOVT. SR. SEC.SCHOOL, SUJAWAS",
+            "visibleif": "{peeoName} = 'SUJAWAS'"
+        },
+        {
+            "value": "GOVT.SEC.SCH., TRILOKPURA",
+            "visibleif": "{peeoName} = 'SUJAWAS'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., GORIYA",
+            "visibleif": "{peeoName} = 'SUJAWAS'"
+        },
+        {
+            "value": "GOVT.P.SCH., NAGAR GORIYA",
+            "visibleif": "{peeoName} = 'SUJAWAS'"
+        },
+        {
+            "value": "GOVT.P.SCH., GARHWALO KI DHANI",
+            "visibleif": "{peeoName} = 'SUJAWAS'"
+        },
+        {
+            "value": "GOVT.P.SCH., DHANKIYA JOHARA",
+            "visibleif": "{peeoName} = 'SUJAWAS'"
+        },
+        {
+            "value": "GOVT.P.SCH., SHERPURA",
+            "visibleif": "{peeoName} = 'SUJAWAS'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., SANS. DHAND KI",
+            "visibleif": "{peeoName} = 'SUJAWAS'"
+        },
+        {
+            "value": "GOVT.P.SCH., KASLI KI DHANI",
+            "visibleif": "{peeoName} = 'SUJAWAS'"
+        },
+        {
+            "value": "GOVT.P.SCH., BUCHYAWALI JOHDI",
+            "visibleif": "{peeoName} = 'TARPURA'"
+        },
+        {
+            "value": "GOVT.P.SCH., DABAR JOHARI",
+            "visibleif": "{peeoName} = 'TARPURA'"
+        },
+        {
+            "value": "GOVT.SEC.SCH., KHEDARO KI DHANI",
+            "visibleif": "{peeoName} = 'TARPURA'"
+        },
+        {
+            "value": "GOVT. SR.SEC.SCH., TARPURA",
+            "visibleif": "{peeoName} = 'TARPURA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., MANSHA JOHARI",
+            "visibleif": "{peeoName} = 'TARPURA'"
+        },
+        {
+            "value": "GOVT.U.P.SCH., NADA JOHDA",
+            "visibleif": "{peeoName} = 'TARPURA'"
+        },
+        {
+            "value": "GOVT.P.SCH., ASHANA JOHAR",
+            "visibleif": "{peeoName} = 'TARPURA'"
+        },
+        {
+            "value": "GOVT.P.SCH., BHATWALI TARPURA",
+            "visibleif": "{peeoName} = 'TARPURA'"
+        },
+        {
+            "value": "GOVT.P.SCH., RAMCHANDRA JOHARI"
+            "visibleif": "{peeoName} = 'TARPURA'"
+        }
+    ]
+   },
+//         {
+//           "type": "text",
+//           "name": "date",
+//           "title": "Date of the Data",
+//           "inputType": "date",
+// 		"isRequired": true,
+//           "min": "2020-12-01"
+//         },
+        {
+          "type": "matrixdynamic",
+          "name": "question2",
+          "title": "Fill Details",
+          "isRequired": true,
+          "columns": [
+            {
+              "name": "Scheme Head Name",
+              "cellType": "dropdown",
+              "isRequired": true,
+              "choices": [
+                "YOUTH AND ECO CLUB PS/UPS",
+    "YOUTH AND ECO CLUB SR/SEC",
+    "ABL ROOM",
+    "COMPOSITE SCHOOL GRANT SR SEC",
+    "COMPOSITE SCHOOL GRANT PS/UPS",
+    "CRC GRANT 2019-20",
+    "CRC GRANT 2020-21",
+    "STIPEND ALLOWANCE 1-8",
+    "STIPEND ALLOWANCE 9-12",
+    "SPORTS GRANT 1-8 (2019-20)",
+    "SPORTS GRANT 1-8 (2019-20) REMAINING AMOUNT",
+    "SPORTS GRANT 1-8 (2020-21)",
+    "SPORTS GRANT 9-12 (2020-21)",
+    "SANDARBH KAKSH MAINTENANCE",
+    "SANDARBH PARENT COUNCELLING",
+    "SANDARBH CENTRE THERAPATIC",
+    "SUBJECT BASE SR TEACHER TRAINING",
+    "ANGANBADI ABL ROOM ESTT",
+    "READER ALLOWNCE 1-8",
+    "READER ALLOWNCE 1-12",
+    "WALL PAINTING PS/UPS",
+    "WALL PAINTING SR SEC",
+    "ICT LAB TRAINING HONRARIUM",
+    "RAA MATHS SCIENCE CLUB PS/UPS",
+    "RAA MATHS SCIENCE CLUB SR SEC",
+    "UTKRISHTH SCHOOL ABL SAMAGRI",
+    "KISHORI MELA SR SEC.",
+    "KISHORI MELA PS/UPS",
+    "TAF HONRARIUM SEC/SR SEC",
+    "NISTHA ONLINE INTERNET FUND"
+  ]
+            },
+           {
+       "name": "Sanction Order Date",
+       "cellType": "dropdown",
+       "isRequired": true,
+       "choices": [
+         "CBEO/SMSA/PIP/2020-21/ 106 DATE:-10-2-21",
+ "CBEO/SMSA/PIP/2020-21/ 105 DATE:-10-2-21",
+ "CBEO/SMSA/PIP/2020-21/ 68 DATE:-24-7-20",
+ "CBEO/SMSA/PIP/2020-21/ 144 DATE:-28-1-20",
+ "CBEO/SMSA/PIP/2020-21/ 145 DATE:-28-10-20",
+ "CBEO/SMSA/PIP/2020-21/100 DATE:-28-7-20",
+ "CBEO/SMSA/PIP/2020-21/ 172 DATE:-15-12-20",
+ "CBEO/SMSA/PIP/2020-21/191 DATE:-8-1-21",
+ "CBEO/SMSA/PIP/2020-21/194 DATE:-8-1-21",
+ "CBEO/SMSA/PIP/2020-21/107 DATE:-14-8-20",
+ "CBEO/SMSA/PIP/2020-21/ 190 DATE:-8-1-21",
+ "CBEO/SMSA/PIP/2020-21/157 DATE:-20-11-20",
+ "CBEO/SMSA/PIP/2020-21/ 197 DATE:-27-1-21",
+ "CBEO/SMSA/PIP/2020-21/146 DATE:-28-1-20",
+ "CBEO/SMSA/PIP/2020-21/ 129 DATE:-25-2-21",
+ "CBEO/SMSA/PIP/2020-21/129 DATE:-25-2-21",
+ "CBEO/SMSA/PIP/2020-21/ 174 DATE:-15-12-20",
+ "CBEO/SMSA/PIP/2020-21/173 DATE:-15-12-20",
+ "CBEO/SMSA/PIP/2020-21/193 DATE:-8-1-21",
+ "CBEO/SMSA/PIP/2020-21/ 192 DATE:-8-1-21",
+ "CBEO/SMSA/PIP/2020-21/188 DATE:-8-1-21",
+ "CBEO/SMSA/PIP/2020-21/189 DATE:-8-1-21",
+ "CBEO/SMSA/PIP/2020-21/195 DATE:-8-1-21",
+ "CBEO/SMSA/PIP/2020-21/186 DATE:-8-1-21",
+ "CBEO/SMSA/PIP/2020-21/187 DATE:-8-1-21",
+ "CBEO/SMSA/PIP/2020-21/185 DATE:-8-1-21",
+ "CBEO/SMSA/PIP/2020-21/107 DATE:-10-2-21",
+ "CBEO/SMSA/PIP/2020-21/108 DATE:-10-2-21",
+ "CBEO/SMSA/PIP/2020-21/127 DATE:-25-2-21",
+ "CBEO/SMSA/PIP/2020-21/128 DATE:-25-2-21"
+ ]
+      },
+            {
+              "name": "No of Pri,Hm and Teachers Oriented to NAS",
+              "cellType": "text",
+              "isRequired": true,
+              "inputType": "number"
+            },
+            {
+              "name": "No of Teachers Completed Learning Outcome Mapping",
+              "cellType": "text",
+              "isRequired": true,
+              "inputType": "number"
+            }
+//             {
+//               "name": "HW Given (Offline)",
+//               "cellType": "text",
+//               "isRequired": true,
+//               "inputType": "number"
+//             },
+//             {
+//               "name": "HW Collected (Online)",
+//               "cellType": "text",
+//               "isRequired": true,
+//               "inputType": "number"
+//             },
+//             {
+//               "name": "HW Collected (Offline)",
+//               "cellType": "text",
+//               "isRequired": true,
+//               "inputType": "number"
+//             },
+//             {
+//               "name": "Total Present",
+//               "cellType": "text",
+//               "isRequired": true,
+//               "inputType": "number"
+//             }
+          ],
+          "columnLayout": "horizontal",
+          "detailPanelMode": "underRow",
+          "horizontalScroll": true,
+          "columnMinWidth": "100px",
+          "minRowCount": 1,
+          "confirmDelete": true,
+          "confirmDeleteText": "Are you sure?"
+        }
+      ]
+    }
+  ],
+  "completeText": "Submit",
+  "showPreviewBeforeComplete": "showAnsweredQuestions"
+}
+function sendDataToServer(survey) {
+    //send Ajax request to your web server.
+    //alert("The results are:" + JSON.stringify(survey.data));
+	
+	var data = survey.data;
+	try {
+					
+					for (i = 0; i < data.question2.length; i++) {
+					var q = data.question2[i];
+                    $.post( "https://docs.google.com/forms/u/2/d/e/1FAIpQLScr6hb-nyE-x7iV6ejx8SqriSMvXaSXzSlmJ1xqQGQvP1J5Ow/formResponse",
+                    {
+//                     "entry.268875749": data.date,
+					"entry.1793765460": data.peeoName,
+// 					"entry.2070308753": data.schoolName,
+					"entry.1884067501": q["Class"],
+					"entry.1305570573": q["Subject"],
+					"entry.303816468": q["No of Pri,Hm and Teachers Oriented to NAS"],
+					"entry.1208961642": q["No of Teachers Completed Learning Outcome Mapping"]
+// 					"entry.2111580312": q["HW Given (Offline)"],
+// 					"entry.1681330709": q["HW Collected (Online)"],
+// 					"entry.79184850": q["HW Collected (Offline)"],
+// 					"entry.303816468": q["Total Present"]
+                    }
+                    );
+					}
+                    }
+        catch(e) {
+            console.log(e);                
+        }
+}
+
+var survey = new Survey.Model(surveyJSON);
+$("#surveyContainer").Survey({
+    model: survey,
+    onComplete: sendDataToServer
+});
+</script>
+</html>
+
 
