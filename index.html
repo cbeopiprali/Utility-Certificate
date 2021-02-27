@@ -1449,16 +1449,16 @@ function sendDataToServer(survey) {
 					
 					for (i = 0; i < data.question2.length; i++) {
 					var q = data.question2[i];
-                    $.post( "https://docs.google.com/forms/u/2/d/e/1FAIpQLScr6hb-nyE-x7iV6ejx8SqriSMvXaSXzSlmJ1xqQGQvP1J5Ow/formResponse",
+                    $.post( "https://docs.google.com/forms/u/2/d/e/1FAIpQLSfKQIaWyH4aJU5nfFmtpV3-U30g5NuBvKY90ymyXqlqFpftBQ/formResponse",
                     {
-//                     "entry.268875749": data.date,
+                    "entry.268875749": data.date,
 					"entry.1793765460": data.peeoName,
-// 					"entry.2070308753": data.schoolName,
-					"entry.1884067501": q["Class"],
-					"entry.1305570573": q["Subject"],
-					"entry.303816468": q["No of Pri,Hm and Teachers Oriented to NAS"],
-					"entry.1208961642": q["No of Teachers Completed Learning Outcome Mapping"]
-// 					"entry.2111580312": q["HW Given (Offline)"],
+					"entry.2070308753": data.schoolName,
+					"entry.1884067501": q["Scheme Head Name"],
+					"entry.1305570573": q["Sanction Order Date"],
+					"entry.303816468": q["Amount Received"],
+					"entry.745594494": q["Amount Utilised"]
+					"entry.829644970": q["Utility Certificate Dispach no and Date"]
 // 					"entry.1681330709": q["HW Collected (Online)"],
 // 					"entry.79184850": q["HW Collected (Offline)"],
 // 					"entry.303816468": q["Total Present"]
